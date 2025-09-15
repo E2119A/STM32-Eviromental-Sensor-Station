@@ -1,7 +1,0 @@
-../Core/Src/bsp/sensors/bmp280.c:4:16:bmp280_read8	40	static
-../Core/Src/bsp/sensors/bmp280.c:11:17:bmp280_read16	40	static
-../Core/Src/bsp/sensors/bmp280.c:18:16:bmp280_readS16	16	static
-../Core/Src/bsp/sensors/bmp280.c:24:6:BMP280_Init	40	static
-../Core/Src/bsp/sensors/bmp280.c:37:6:BMP280_ReadCalibrationData	16	static
-../Core/Src/bsp/sensors/bmp280.c:53:7:BMP280_ReadTemperature	40	static
-../Core/Src/bsp/sensors/bmp280.c:68:7:BMP280_ReadPressure	344	static

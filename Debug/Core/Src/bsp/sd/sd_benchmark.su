@@ -1,3 +1,0 @@
-../Core/Src/bsp/sd/sd_benchmark.c:42:10:sd_benchmark_write	1112	static
-../Core/Src/bsp/sd/sd_benchmark.c:73:10:sd_benchmark_read	1112	static
-../Core/Src/bsp/sd/sd_benchmark.c:103:6:sd_benchmark	16	static

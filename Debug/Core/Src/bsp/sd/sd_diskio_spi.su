@@ -1,5 +1,0 @@
-../Core/Src/bsp/sd/sd_diskio_spi.c:21:9:SD_disk_status	16	static
-../Core/Src/bsp/sd/sd_diskio_spi.c:27:9:SD_disk_initialize	16	static
-../Core/Src/bsp/sd/sd_diskio_spi.c:34:9:SD_disk_read	24	static
-../Core/Src/bsp/sd/sd_diskio_spi.c:41:9:SD_disk_write	24	static
-../Core/Src/bsp/sd/sd_diskio_spi.c:47:9:SD_disk_ioctl	16	static
