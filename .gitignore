@@ -1,0 +1,17 @@
+# STM32CubeIDE / Eclipse junk
+.settings/
+.project
+.cproject
+*.launch
+
+# Build outputs
+Debug/
+Release/
+*.o
+*.elf
+*.bin
+*.hex
+
+# Other temp files
+*.log
+*.swp
