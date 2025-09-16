@@ -127,7 +127,7 @@ Temperature (red, °C) and Pressure (blue, hPa) vs time (mm:ss). Data is streame
 
 ![stm32](./docs/graph.bmp)
 
-he chart shows live telemetry parsed from CSV lines sent over UART: tick_ms, temperature_C, pressure_hPa. The X‑axis is time since the plot started (mm:ss). The left Y‑axis is temperature; the right Y‑axis is pressure. The window dynamically pans, keeping the latest N seconds visible. Smoothing (–smooth) can be adjusted to reduce jitter without hiding trends.
+The chart shows live telemetry parsed from CSV lines sent over UART: tick_ms, temperature_C, pressure_hPa. The X‑axis is time since the plot started (mm:ss). The left Y‑axis is temperature; the right Y‑axis is pressure. The window dynamically pans, keeping the latest N seconds visible. Smoothing (–smooth) can be adjusted to reduce jitter without hiding trends.
 
 1) Install deps: python -m pip install pyserial matplotlib
 2) Run (Windows example): python tools/uart_plot.py --port COM6 --baud 115200 --smooth 0.2
