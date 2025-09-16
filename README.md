@@ -6,7 +6,6 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 
 ## Contents
 - [Overview](#overview)
-- [Screenshots and Diagrams](#screenshots-and-diagrams)
 - [Technical Specifications](#technical-specifications)
 - [Wiring and Connection Diagrams](#wiring-and-connection-diagrams)
 - [Software and Dependencies](#software-and-dependencies)
@@ -25,13 +24,6 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 - Storage: microSD over SPI (FatFs)
 - Logging: CSV to SD (log.txt) and identical CSV via UART (115200)
 - Architecture: app, bsp, os, with headers split into app/, bsp/, system/
-
-## Screenshots and Diagrams
-Place your images under docs/images/ and update names below.
-- Device: docs/images/device_front.jpg
-- OLED sample: docs/images/oled_sample.png
-- System block: docs/images/system_block.png
-- Wiring: docs/images/wiring.bmp280_ssd1306_sd.png
 
 ## Technical Specifications
 - Power: USB 5V on NUCLEO (on-board 3.3V regulator)
