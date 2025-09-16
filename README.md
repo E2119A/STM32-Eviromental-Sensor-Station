@@ -126,9 +126,7 @@ Command line (optional)
 ## SD Card Logging and Data Format
 This project logs sensor data to the SD card (root) as CSV in `log.txt`.
 
-Screenshot placeholder (replace with your image):
-
-![SD logging](docs/images/sd_logging.png)
+![SD logging](docs/logscreen.png)
 
 CSV format per line:
 ```
