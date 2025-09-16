@@ -1,6 +1,6 @@
 # Modular STM32 Weather Station
 
-A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (temperature/pressure), SSD1306 OLED, SD logging (FatFs), and UART CSV streaming. The codebase is organized for clarity, modularity, and future growth.
+A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (temperature/pressure), SSD1306 (OLED), SD logging (FatFs), and UART CSV streaming. The codebase is organized for clarity, modularity, and future growth.
 
 ![stm32](./docs/demo4.gif)
 
