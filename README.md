@@ -13,6 +13,7 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 - [Project Structure](#project-structure)
 - [Build and Flash Instructions](#build-and-flash-instructions)
 - [Operation Instructions](#operation-instructions)
+- [SD Card Logging and Data Format](#sd-card-logging-and-data-format)
 - [Realtime UART Plotting](#realtime-uart-plotting)
 - [Extending the Project](#extending-the-project)
 
@@ -121,7 +122,32 @@ Command line (optional)
   - SD task appends CSV lines to log.txt.
   - UART task streams identical CSV at 115200.
 - CSV fields: tick_ms (since boot), temp_C, press_hPa.
+  
+## SD Card Logging and Data Format
+This project logs sensor data to the SD card (root) as CSV in `log.txt`.
 
+Screenshot placeholder (replace with your image):
+
+![SD logging](docs/images/sd_logging.png)
+
+CSV format per line:
+```
+tick_ms,temperature_C,pressure_hPa
+```
+- tick_ms: system tick in milliseconds since boot (monotonic)
+- temperature_C: floating point degrees Celsius
+- pressure_hPa: floating point hectopascals
+
+Example:
+```
+11010,25.85,982.16
+```
+
+Logging behavior:
+- File is created on first write and then appended (`FA_OPEN_ALWAYS` + seek to end)
+- One line per new sample (matches UART CSV exactly)
+- SD access is mutex-protected to ensure thread safety
+- 
 ## Realtime UART Plotting
 Temperature (red, °C) and Pressure (blue, hPa) vs time (mm:ss). Data is streamed from the STM32 at 115200 baud in CSV format and plotted with an optional EMA smoothing for more stable visuals.
 
