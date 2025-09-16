@@ -123,6 +123,12 @@ Command line (optional)
 - CSV fields: tick_ms (since boot), temp_C, press_hPa.
 
 ## Realtime UART Plotting
+Temperature (red, °C) and Pressure (blue, hPa) vs time (mm:ss). Data is streamed from the STM32 at 115200 baud in CSV format and plotted with an optional EMA smoothing for more stable visuals.
+
+![stm32](./docs/graph.bmp)
+
+he chart shows live telemetry parsed from CSV lines sent over UART: tick_ms, temperature_C, pressure_hPa. The X‑axis is time since the plot started (mm:ss). The left Y‑axis is temperature; the right Y‑axis is pressure. The window dynamically pans, keeping the latest N seconds visible. Smoothing (–smooth) can be adjusted to reduce jitter without hiding trends.
+
 1) Install deps: python -m pip install pyserial matplotlib
 2) Run (Windows example): python tools/uart_plot.py --port COM6 --baud 115200 --smooth 0.2
 - X axis: mm:ss from script start
