@@ -154,7 +154,7 @@ UARTTask
 - Architecture allows adding new producers (sensors) or consumers (radio, network, etc.) without modifying existing tasks
 
 ## Build and Flash Instructions
-[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html)
+Using [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) to built and flash.
 1. Import/Open project Meteo_v1.
 2. Build (Debug): Project -> Build Project.
 3. Connect NUCLEO via USB (ST-Link) and Debug/Run to flash.
