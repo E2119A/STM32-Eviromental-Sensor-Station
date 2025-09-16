@@ -97,6 +97,39 @@ Design notes
 - Headers split (Core/Inc/app|bsp|system) and sources grouped by module for maintainability.
 - CubeIDE includes these folders recursively; internal refactors do not require IDE path changes.
 
+Logging behavior:
+- File is created on first write and then appended (`FA_OPEN_ALWAYS` + seek to end)
+- One line per new sample (matches UART CSV exactly)
+- SD access is mutex-protected to ensure thread safety
+
+## Tasks and RTOS Design
+
+FreeRTOS task breakdown:
+
+SensorTask
+- Periodic: every 500 ms
+- Reads BMP280 via I2C (mutex-protected)
+- Publishes new sample to queues
+
+DisplayTask
+- Triggered on new sample
+- Updates SSD1306 OLED (temperature + pressure)
+
+SDTask
+- Triggered on new sample
+- Appends CSV line to `log.txt`
+- Waits for semaphore indicating SD ready
+
+UARTTask
+- Triggered on new sample
+- Streams CSV over UART2 at 115200 baud
+
+### Key design points
+- No global shared state → tasks communicate via queues
+- Mutexes guard I2C, UART, and SD card access
+- Semaphore ensures SD is initialized before first write
+- Architecture allows adding new producers (sensors) or consumers (radio, network, etc.) without modifying existing tasks
+
 ## Build and Flash Instructions
 STM32CubeIDE
 1. Import/Open project Meteo_v1.
