@@ -6,6 +6,7 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 
 ## Contents
 - [Overview](#overview)
+- [Component list](#component-list)  
 - [Technical Specifications](#technical-specifications)
 - [Wiring and Connection Diagrams](#wiring-and-connection-diagrams)
 - [Software and Dependencies](#software-and-dependencies)
@@ -18,6 +19,27 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 - [Extending the Project](#extending-the-project)
 
 ## Overview
+This project is a modular weather station built on the **STM32F401RE (NUCLEO-F401RE)** platform.  
+It demonstrates a production-style embedded design using **FreeRTOS**, modular BSP drivers, and layered architecture.  
+
+- **Core functionality**  
+  - Reads temperature (°C) and pressure (hPa) from a **BMP280** sensor over I²C  
+  - Displays data on a **SSD1306 128×64 OLED**  
+  - Logs samples to a **microSD card (FatFs, SPI)** in CSV format  
+  - Streams identical CSV lines over **UART2 (115200 baud)** for real-time monitoring and plotting  
+
+- **System architecture**  
+  - **App layer**: tasks for sensor, display, SD logging, and UART streaming  
+  - **BSP layer**: modular drivers for sensors, display, and storage  
+  - **OS layer**: FreeRTOS tasks, queues, mutexes, and semaphores  
+  - Decoupled producer/consumer design for easy extensibility (new sensors or outputs can be added with minimal changes)  
+
+- **Use cases**  
+  - Standalone datalogger (SD card)  
+  - Real-time monitoring over UART with Python plotting  
+  - Educational example of RTOS-based modular STM32 project with sensors, display, and storage integration
+
+## Component list
 - MCU: STM32F401RE (NUCLEO-F401RE board)
 - RTOS: FreeRTOS (CMSIS-RTOS v2)
 - Sensors: BMP280 (temperature in °C, pressure in hPa)
