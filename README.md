@@ -116,7 +116,7 @@ Command line (optional)
 - CSV fields: tick_ms (since boot), temp_C, press_hPa.
   
 ## SD Card Logging and Data Format
-This project logs sensor data to the SD card (root) as CSV in `log.txt`.
+This project logs sensor data to the SD card as CSV in `log.txt`.
 
 ![SD logging](docs/logscreen.png)
 
@@ -137,7 +137,8 @@ Logging behavior:
 - File is created on first write and then appended (`FA_OPEN_ALWAYS` + seek to end)
 - One line per new sample (matches UART CSV exactly)
 - SD access is mutex-protected to ensure thread safety
-- 
+
+
 ## Realtime UART Plotting
 Temperature (red, °C) and Pressure (blue, hPa) vs time (mm:ss). Data is streamed from the STM32 at 115200 baud in CSV format and plotted with an optional EMA smoothing for more stable visuals.
 
