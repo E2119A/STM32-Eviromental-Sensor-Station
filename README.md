@@ -10,6 +10,7 @@ A modular STM32F401RE (NUCLEO-F401RE) weather station with FreeRTOS, BMP280 (tem
 - [Wiring and Connection Diagrams](#wiring-and-connection-diagrams)
 - [Software and Dependencies](#software-and-dependencies)
 - [Project Structure](#project-structure)
+- [Tasks and RTOS Design](#tasks-and-rtos-design)
 - [Build and Flash Instructions](#build-and-flash-instructions)
 - [Operation Instructions](#operation-instructions)
 - [SD Card Logging and Data Format](#sd-card-logging-and-data-format)
