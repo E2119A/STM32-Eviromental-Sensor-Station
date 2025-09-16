@@ -45,13 +45,17 @@ Place your images under docs/images/ and update names below.
   - Display/UART/SD: event-driven per new sample (via queues)
 
 ## Wiring and Connection Diagrams
+
+![stm32](./docs/scheme.png)
+
+
 I2C (BMP280, SSD1306)
 - 3.3V -> VCC
 - GND -> GND
 - PB8 (I2C1_SCL) -> SCL
 - PB9 (I2C1_SDA) -> SDA
 
-SPI (microSD)
+SPI (MicroSD)
 - 3.3V -> VCC
 - GND -> GND
 - PB13 (SPI2_SCK) -> SCK
